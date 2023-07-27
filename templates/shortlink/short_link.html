@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}short link{% endblock title %}
+
+{% block content %}
+    <p>your URL is {{url.long_url}}</p>
+    <p>your SHORTENED URL is {{url.short_url.short_link}}</p>
+    {% if url.short_url.user_ip %}
+        <p>last client ip was clicked on link {{url.short_url.user_ip}}</p>
+    {% endif %}
+    <p>time of last click : {{url.short_url.event_time}}</p>
+    <p>number of all clicked on link : {{url.short_url.count}}</p>
+{% endblock content %}
